@@ -7,6 +7,8 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
+namespace Application;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -16,6 +18,26 @@ return array(
                     'route'    => '/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'produtos' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/produtos',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Produtos',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'categorias' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/categorias',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Categorias',
                         'action'     => 'index',
                     ),
                 ),
@@ -73,7 +95,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Produtos' => 'Application\Controller\ProdutosController',
+            'Application\Controller\Categorias' => 'Application\Controller\CategoriasController',
         ),
     ),
     'view_manager' => array(
@@ -98,5 +122,19 @@ return array(
             'routes' => array(
             ),
         ),
+    ),   
+    'doctrine' => array(
+        'driver' => array(
+            __NAMESPACE__ . '_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                )
+            )
+        )
     ),
 );

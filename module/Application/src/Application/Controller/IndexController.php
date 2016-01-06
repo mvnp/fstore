@@ -14,8 +14,17 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    private $entityManager;
+    
     public function indexAction()
     {
+        $this->getEntityManager();
         return new ViewModel();
+    }
+    
+    public function getEntityManager()
+    {
+        if($this->entityManager == null) $this->entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+        return $this->entityManager;
     }
 }
