@@ -32,6 +32,16 @@ return array(
                     ),
                 ),
             ),
+            'produtos-add' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/produtos/add',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Produtos',
+                        'action'     => 'add',
+                    ),
+                ),
+            ),
             'categorias' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
