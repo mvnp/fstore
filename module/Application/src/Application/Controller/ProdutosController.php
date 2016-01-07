@@ -18,8 +18,10 @@ class ProdutosController extends AbstractActionController
     public function addAction()
     {
         $ProdutoForm = new ProdutoForm();
-        $this->getEntityManager();
-        return new ViewModel(['ProdutoForm' => $ProdutoForm]);
+        $qb = $this->getEntityManager()->getRepository('Application\Entity\Categoria')->createQueryBuilder('c');
+        $categorias =  $qb->select(); 
+        
+        return new ViewModel(['ProdutoForm' => $ProdutoForm, 'Categorias' => $categorias]);
     }
     
     public function getEntityManager()

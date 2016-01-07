@@ -26,6 +26,8 @@
 
     </head>
     <body background="<?php echo $this->basePath('img/wallpaper.jpeg'); ?>">
+        <?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+        <?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">

@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <center>
+            <h3>Cadastro de Categoria de Produto</h3>
+        </center>
+    </div>
+    
+    <center>
+    <div class="panel-body">
+        <form method="POST" enctype="multipart/form-data">
+        
+        <div> <?= $this->formrow($CategoriaForm->get('name')); ?> </div>
+        <div> <?= $this->formrow($CategoriaForm->get('description')); ?> </div><br>
+        <div> <?= $this->formfile($CategoriaForm->get('logo')); ?> </div>        
+        <hr>
+        <div> <?= $this->formrow($CategoriaForm->get('cadastrar')); ?> </div>
+        
+        
+        
+        
+        <?php echo $this->form()->closeTag(); ?>       
+        
+    </div>
+    </center>
+</div>

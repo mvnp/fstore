@@ -7,9 +7,7 @@ class ProdutoForm extends Form
 {
     public function __construct()
     {
-        parent::__construct("produto");
-        
-        
+        parent::__construct("produto");       
     }
 }
 

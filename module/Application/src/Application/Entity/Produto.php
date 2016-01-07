@@ -49,6 +49,13 @@ class Produto
      * @ORM\Column(type="float") 
      */
     private $produto_tdp;
+    
+    /**
+     * @ORM\Column(type="string")
+     *
+     */
+    private $produto_photo;
+    
 }
 
 ?>
