@@ -62,6 +62,16 @@ return array(
                     ),
                 ),
             ),
+            'categorias-view' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/categorias/view',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Categorias',
+                        'action'     => 'view',
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
